@@ -1,0 +1,4 @@
+git clone https://github.com/Appsilon/flowers.git
+sudo snap install docker
+sudo docker pull marekrog/trail_camera_ai
+sudo docker run --restart always -p 80:8008  marekrog/trail_camera_ai &

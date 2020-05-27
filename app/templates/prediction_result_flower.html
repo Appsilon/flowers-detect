@@ -1,0 +1,23 @@
+{% if result %}
+<div class="ui centered blue card">
+  <div class="image">
+  <img alt="Embedded Image" src="{{ result.src }}" />
+  </div>
+  <div class="content">
+    <a class="header">I see a <strong>{{ result.class }}</strong></a>
+    <div class="meta">
+      <span class="date">I'm <strong>{{ "%.2f"|format(result.confidence * 100) }}%</strong> confident about that</span>
+    </div>
+    {% if result.other_results %}
+    <div class="description">
+      Less likely to be:
+      <ul>
+        {% for key, prob in result.other_results %}
+        <li>{% if loop.last %}or{% endif %} <strong>{{key}}</strong>: {% if loop.last %}only{% endif %} {{ "%.2f"|format(prob * 100) }}% chance.</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+  </div>
+</div>
+{% endif %}
