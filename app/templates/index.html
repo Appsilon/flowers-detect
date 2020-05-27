@@ -10,9 +10,9 @@
         <form action="/upload_flower_image" method="post" enctype="multipart/form-data" class="ui form">
           <div class="field">
             <label>Select image to upload:</label>
-						<input type="file" name="file">
+						<input type="file" id="uploaded_file" name="file" onChange="document.getElementById('submit_button').disabled=false;">
 					</div>
-					<input type="submit" value="Detect genus" class="ui button primary"/>
+					<input type="submit" value="Detect genus" id="submit_button" class="ui button primary" onclick="var e=this;setTimeout(function(){e.disabled=true; e.value='Analyzing...';},0);return true;" disabled/>
 				</form>
 			</div>
 		</div>

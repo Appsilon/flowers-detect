@@ -54,7 +54,7 @@ async def run_classify(request, learn, class_names):
 @app.route("/upload_flower_image", methods=["POST"])
 async def upload(request):
     context = await run_classify(request, learn_flowers, None)
-    return templates.TemplateResponse('flower.html', context)
+    return templates.TemplateResponse('index.html', context)
 
 def predict_image_from_bytes(bytes, learn):
     img = open_image(BytesIO(bytes))
