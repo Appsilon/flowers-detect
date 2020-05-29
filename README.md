@@ -1,6 +1,8 @@
 # Flower genus detection app
 Model and interface for detecting flower genus.
 
+App is deployed at https://flowers.appsilon.ai/
+
 app based on https://github.com/simonw/cougar-or-not (and its incarnations in https://github.com/Appsilon/defect-detection, and https://github.com/Appsilon/car-damage)
 
 
